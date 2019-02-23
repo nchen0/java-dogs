@@ -7,5 +7,5 @@ import java.util.List;
 public interface DogRepository extends JpaRepository<Dogs, Long> {
     List<Dogs> findAllByOrderByWeight();
     List<Dogs> findAllByApartmentDog(Boolean bool);
-    List<Dogs> findAllByBreed(String breed);
+    Dogs findByBreedIgnoreCase(String breed);
 }
