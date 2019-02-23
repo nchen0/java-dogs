@@ -9,13 +9,13 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SeedDatabase {
     @Bean
-    public CommandLineRunner initDB(DogRepository dogrepos) {
+    public CommandLineRunner initDB(DogRepository repository) {
         return args -> {
-            log.info("Seeding " + dogrepos.save(new Dogs("Springer", 50, false)));
-            log.info("Seeding " + dogrepos.save(new Dogs("Bulldog", 50, true)));
-            log.info("Seeding " + dogrepos.save(new Dogs("Collie", 50, false)));
-            log.info("Seeding " + dogrepos.save(new Dogs("Boston Terrie", 35, true)));
-            log.info("Seeding " + dogrepos.save(new Dogs("Corgie", 35, true)));
+            log.info("Seeding " + repository.save(new Dogs("Springer", 50, false)));
+            log.info("Seeding " + repository.save(new Dogs("Bulldog", 45, true)));
+            log.info("Seeding " + repository.save(new Dogs("Collie", 50, false)));
+            log.info("Seeding " + repository.save(new Dogs("Boston Terrie", 30, true)));
+            log.info("Seeding " + repository.save(new Dogs("Corgie", 35, true)));
         };
     }
 }
